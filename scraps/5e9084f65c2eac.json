@@ -1,0 +1,34 @@
+{
+  "title": "Flutter TabController で Animation を付けない",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-03-15",
+  "comments": [
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-15",
+      "body_markdown": "参考ついでに、自分が作ったものを投稿。\n\nhttps://stackoverflow.com/questions/60545618/disable-animation-when-changing-tabs-in-flutter"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-15",
+      "body_markdown": "これが参考になった。\nなるほど。こうやって既存の class を extends するのね。\n\nhttps://github.com/flutter/flutter/issues/19143#issuecomment-412273742"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-15",
+      "body_updated_at": "2021-03-15",
+      "body_markdown": "結果、このコードにした。\n\n```dart: no_animation_tab_controller.dart\n\nimport 'package:flutter/material.dart';\n\nclass NoAnimationTabController extends TabController {\n  NoAnimationTabController(\n      {int initialIndex = 0,\n      @required int length,\n      @required TickerProvider vsync})\n      : super(initialIndex: initialIndex, length: length, vsync: vsync);\n\n  @override\n  void animateTo(int value,\n      {Duration duration = kTabScrollDuration, Curve curve = Curves.ease}) {\n    super.animateTo(value,\n        duration: const Duration(milliseconds: 0), curve: curve);\n  }\n}\n\n\n```"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-15",
+      "body_markdown": "思考過程\n\n1. アニメーション消したい\n2. flutter animation tabbar tabcontrller で検索するも、良い回答ない\n2. どこで設定されているか探す\n3. animateTo だ\n4. 上書きしたい\n5. flutter tabcontroller extends how to で検索\n6. 上書きする方法見つける\n7. Duration(milliseconds: 0) にする\n8. 完成"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-15",
+      "body_markdown": "scrap 良いな〜！！！"
+    }
+  ]
+}

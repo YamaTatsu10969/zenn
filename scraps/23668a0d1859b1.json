@@ -1,0 +1,18 @@
+{
+  "title": "AVPlayer, ExoPlayer の実装",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-06-02",
+  "comments": [
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-06-02",
+      "body_markdown": "\n## AVPlayer \n\nplayer で `rate` で observe\n\n```swift\nplayer.addObserver(self, forKeyPath: \"rate\", options: .New, context: nil) // somewhere after player init\n...\noverride func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {\n  if keyPath == \"rate\" {\n    playButton.enabled = player.rate == 1 \n  } else {\n    super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)\n  }\n}\n```\n\nhttps://stackoverflow.com/questions/34038368/how-to-perform-some-action-on-play-and-pause-actions-of-avplayer"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-06-02",
+      "body_markdown": "### ExoPlayer\n\n`default void\tonIsPlayingChanged​(boolean isPlaying)` で監視\n\n\n\nhttps://exoplayer.dev/doc/reference/com/google/android/exoplayer2/Player.EventListener.html"
+    }
+  ]
+}

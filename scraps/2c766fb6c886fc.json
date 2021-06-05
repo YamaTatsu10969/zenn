@@ -1,0 +1,20 @@
+{
+  "title": "Flutter エラー",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-03-15",
+  "comments": [
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-15",
+      "body_updated_at": "2021-03-15",
+      "body_markdown": "プロジェクトの flutter sdk を上げている途中。\nfvm で管理している。\n\n以前はsdk が 1.22.2\nバージョンアップ後は 2.0.1\n\niOS のシミュレーターで以下のエラーが発生。\n`#import <Flutter/Flutter.h>` が見つからないらしい\n\n```\nFailed to build iOS app\nError output from Xcode build:\n↳\n    ** BUILD FAILED **\n\n\nXcode's output:\n↳\n    In file included from /Users/userName/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.27/ios/Classes/FLTPathProviderPlugin.m:5:\n    /Users/userName/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.27/ios/Classes/FLTPathProviderPlugin.h:5:9: fatal error: 'Flutter/Flutter.h' file not found\n    #import <Flutter/Flutter.h>\n```"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-15",
+      "body_updated_at": "2021-03-15",
+      "body_markdown": "以下を行ったら直った。\n\n```\n0. cd ios\n1. pod deintegrate\n2. rm Flutter/Flutter.podspec\n3. fvm flutter clean\n4. fvm flutter pub get\n5. pod install\n```\n\n参照：https://github.com/flutter/flutter/issues/70895"
+    }
+  ]
+}

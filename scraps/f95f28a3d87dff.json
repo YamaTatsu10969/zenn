@@ -1,0 +1,29 @@
+{
+  "title": "下スワイプで画面を閉じるようにする。Flutter",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-03-11",
+  "comments": [
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_markdown": "なるほど。\nDismissible でできるのか。\n\nhttps://stackoverflow.com/questions/51913561/flutter-drag-down-to-dismiss"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_markdown": "これ画面全体でスクロール系使ってないもの限定だな。\nScrollView 入ってると、反応がない。\n重複してるからかな。"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_updated_at": "2021-03-11",
+      "body_markdown": "スクロール系使わないとこれでできるらしい\n\n```dart\nclass SecondRoute extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return Dismissible(\n      direction: DismissDirection.vertical,\n      key: const Key('key'),\n      onDismissed: (_) => Navigator.of(context).pop(),\n      child: Scaffold(\n        appBar: AppBar(\n          title: Text(\"Second Route\"),\n        ),\n        body: Align(\n          alignment: Alignment.center,\n          child: Container(\n            height: 300,\n            width: 300,\n            child: SizedBox.expand(child: FlutterLogo()),\n            margin: EdgeInsets.only(bottom: 50, left: 12, right: 12),\n            decoration: BoxDecoration(\n              color: Colors.white,\n              borderRadius: BorderRadius.circular(40),\n            ),\n          ),\n        ),\n      ),\n    );\n  }\n}\n```"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_markdown": "これで作ってみた。\nこれならうまく動いた！\n150 のところはだいたいこのくらいという目安。\n\nここだけ、DismissiblePage みたいに、statefulWidget で作っても良さそうだな。\n\n```\n\nclass HogeViewModel {\n    ScrollController scrollController;\n}\n\nclass HogePage extends HookWidget {\n  @override\n  Widget build(BuildContext context) {\n    final viewModel = useProvider(hogeViewModel);\n\n    useEffect(() {\n      viewModel.scrollController = ScrollController()\n        ..addListener(\n          () async {\n            if (viewModel.scrollController.offset < -150) {\n              Navigator.pop(context);\n              viewModel.scrollController.dispose();\n            }\n          },\n        );\n      return;\n    }, []);\n\n    return Scaffold(\n      body: SafeArea(\n        child: Stack(\n          children: [\n            Column(\n              mainAxisSize: MainAxisSize.min,\n              children: [\n                Expanded(\n                  child: ListView(\n                    controller: viewModel.scrollController,\n                    padding: const EdgeInsets.only(\n                      bottom: 16,\n                    ),\n                    children: [....\n\n```"
+    }
+  ]
+}

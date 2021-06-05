@@ -1,0 +1,104 @@
+{
+  "title": "Mac の初期セットアップを簡単にする",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-03-21",
+  "comments": [
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-21",
+      "body_markdown": "おお。ここまで自動化できたらすごい。\n\nhttps://zenn.dev/ulwlu/articles/1c3a1da12887ed"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-21",
+      "body_markdown": "ふむふむ。\nドットファイルか\n\nhttps://qiita.com/b4b4r07/items/b70178e021bef12cd4a2"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-21",
+      "body_markdown": "これは必須や\n\nhttps://zenn.dev/ryo_kawamata/scraps/47984f76e705a2"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-21",
+      "body_markdown": "良さそう。これ使おうかな\n\nhttps://zenn.dev/ryo_kawamata/articles/introduce-chezmoi"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-21",
+      "body_markdown": "わかりやすい〜！なるほど。\npowerline のことも書いてあるのありがたい！\n\nhttps://qiita.com/AkkeyLab/items/68680a397d545a2dfaff"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-21",
+      "body_markdown": "Homebrew と mas でアプリをインストールするんだな。\nドットファイルは、設定用ファイルたちか。\n\nhttps://qiita.com/takeshisakuma/items/e9685fb9e394212247c0"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-21",
+      "body_markdown": "brewfile の参考\n\nhttps://github.com/takeshisakuma/brewfile/blob/master/Brewfile"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-21",
+      "body_markdown": "なるほど\n\nhttps://github.com/AkkeyLab/mac-auto-setup"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-22",
+      "body_updated_at": "2021-03-22",
+      "body_markdown": "homebrew 入れてるけど、まだ使えない。rosseta 入れてないからっぽい\n\n```\narch -arm64e /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)\"\n```"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-22",
+      "body_markdown": "rosseta をインストールするために、m1対応していないアプリをインストール（Android studio）"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-22",
+      "body_markdown": "\n助かった。\nこれが必要だった！\n\n```~/.zshrc\ntypeset -U path PATH\npath=(\n\t/opt/homebrew/bin(N-/)\n\t/usr/local/bin(N-/)\n\t$path\n)\n```\n\nhttps://zenn.dev/ress/articles/069baf1c305523dfca3d"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-22",
+      "body_markdown": "ここで\n\n\nキーボードの設定\n- caps →　cmd\n- キーリピート\n- キーの認識\n\nトラックパッド\n- 軌跡の速さ\n\n\nなどを設定\n"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-22",
+      "body_markdown": "ssh に登録\n\nhttps://qiita.com/unsoluble_sugar/items/14bea376d8e6fce82eb3"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-22",
+      "body_markdown": "setup に必要なファイルを clone"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-22",
+      "body_markdown": "mas は一旦、app store にログインしないと使えないみたい\n\nhttps://github.com/mas-cli/mas/issues/164"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-23",
+      "body_markdown": "昔の settings \n\nhttps://github.com/YamaTatsu10969/SettingFile_yamatatsu"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-23",
+      "body_markdown": "```\n# スクショのデフォルトパス変更\nmkdir ~/Pictures/screenshot\ndefaults write com.apple.screencapture location ~/Pictures/screenshot\n\n# スクリーンショットの撮影時に影を含めない\n$ defaults write com.apple.screencapture disable-shadow -boolean true\n\n# デフォルトで隠しファイルを表示する\n$ defaults write com.apple.finder AppleShowAllFiles -bool true\n```"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-23",
+      "body_markdown": "```\ncd\n\n# powerline の fonts のインストール\ngit clone https://github.com/powerline/fonts.git --depth=1\ncd fonts\n./install.sh\ncd ..\nrm -rf fonts\n\n# powerline のインストール\ngit clone https://github.com/milkbikis/powerline-shell\ncd powerline-shell\nsudo python setup.py install\\\n\n# zplug のインストール\ncurl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh\n```"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-23",
+      "body_markdown": "![](https://storage.googleapis.com/zenn-user-upload/7gci5k2o36c4cfh5s4cpa5n3udbf)\n"
+    }
+  ]
+}

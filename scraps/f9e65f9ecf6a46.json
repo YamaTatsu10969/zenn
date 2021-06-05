@@ -1,0 +1,40 @@
+{
+  "title": "flutter sdk のアップデート flutter fvm",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-03-11",
+  "comments": [
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_updated_at": "2021-03-11",
+      "body_markdown": "Flutter 2.0 になって、 stable が 2.0.1 になったようだ。\n既存アプリの sdk のバージョンをあげる"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_markdown": "fvm 使ってる\nupgrade で良いのかな\n\nhttps://github.com/leoafarias/fvm"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_markdown": "fvm remove stable \nfvm install stable で生まれ変わった"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_markdown": "pub を再取得"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_updated_at": "2021-03-11",
+      "body_markdown": "`fvm flutter pub outdated`\n`fvm flutter pub upgrade --major-versions`\n\nでいけた"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-11",
+      "body_markdown": "Row 使ってるところでエラーが出てた。\n`crossAxisAlignment: CrossAxisAlignment.baseline,` を消して対応。\n\n```\ntextBaseline is required if you specify the crossAxisAlignment with CrossAxisAlignment.baseline\n'package:flutter/src/widgets/basic.dart':\nFailed assertion: line 4134 pos 15: 'crossAxisAlignment != CrossAxisAlignment.baseline || textBaseline != null'\n```"
+    }
+  ]
+}

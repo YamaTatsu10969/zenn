@@ -1,0 +1,23 @@
+{
+  "title": "Flutter web を触ってみる",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-03-25",
+  "comments": [
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-25",
+      "body_markdown": "https://medium.com/flutter-community/flutter-web-firebase-authentication-and-google-sign-in-33ef84a70b71#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjZhOGJhNTY1MmE3MDQ0MTIxZDRmZWRhYzhmMTRkMTRjNTRlNDg5NWIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2MTY2Mjc2MjIsImF1ZCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwOTE1NDUyODMxODM0ODIwODE0NSIsImVtYWlsIjoiNTIud2FkYWNoaS45NkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXpwIjoiMjE2Mjk2MDM1ODM0LWsxazZxZTA2MHMydHAyYTJqYW00bGpkY21zMDBzdHRnLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwibmFtZSI6IlRhdHN1eWEgWWFtYW1vdG8iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2pvR2FHUGFXQWRvUUF1aGJ6Y0VILW5qNjZzMzIyaTdOUWg4eUR6OFc0PXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlRhdHN1eWEiLCJmYW1pbHlfbmFtZSI6IllhbWFtb3RvIiwiaWF0IjoxNjE2NjI3OTIyLCJleHAiOjE2MTY2MzE1MjIsImp0aSI6Ijc4MDRjYTlhM2M0MTNkMWVkYTZkZWZhN2VkYjE2NmUxY2QxNzEyN2YifQ.MPv0UMhcmbsCO5LFIv_xKx7WJK3MDU9qHUyC9VNghiDIGqhAC52coaQOu3cCTAOj9Cx8UkuXEMh4e9WLvLDUTCUlMFghh1BDCFzHSSyl7xD9KrE200v5zRZrAvysHxxkJaMvb-3I9q4JztJfovLSLfs9bnlHguwfmIy7ggY_Mvc4UJ-W7SfCZHjX-HFvHQYKdwEs0re4PpuntE6cstimG7NyA_VPD4zR06IKqqNo1rX6VtwPnAvuE56B-goXznb7GOxx62gYpFZWxbB1ynT8gmcjv3nyxeV9tlwtmYYMpMr_FyM275ecYdmY_tSRbZRmr2Qb9r6J0MmccraRk07wtA"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-25",
+      "body_markdown": "とりあえずこれを買った\n\nhttps://www.udemy.com/course/flutter-web-with-firebase-course/"
+    },
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2021-03-27",
+      "body_markdown": "firebase を使おうと思ったんだけど、firebaseConfig を index.html にかくみたいで大丈夫なのか調べた。\n結論大丈夫そう。\nfirestore のセキュリティルールしっかり書く。\n\nhttps://stackoverflow.com/questions/37482366/is-it-safe-to-expose-firebase-apikey-to-the-public"
+    }
+  ]
+}

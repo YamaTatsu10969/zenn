@@ -1,0 +1,13 @@
+{
+  "title": "Flutter のメモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2020-12-24",
+  "comments": [
+    {
+      "author": "yamatatsu10969",
+      "created_at": "2020-12-24",
+      "body_markdown": "次の画面で arguments を受け取る方法\n\n```dart\n    final name = ModalRoute.of(context).settings.name;\n    final args = ModalRoute.of(context).settings.arguments;\n```\n\nMaterialPageRoute と CupertinoPageRoute  のどっちでも使える。\n`ModalRoute` を継承しているから"
+    }
+  ]
+}
